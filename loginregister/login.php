@@ -4,12 +4,12 @@ session_start();
 include_once 'db_connect.php';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $username = $_POST['username'];
+    $email = $_POST['email'];
     $password = $_POST['password'];
 
-    $sql = "SELECT * FROM ipt102_db WHERE username = ?";
+    $sql = "SELECT * FROM ipt102_db WHERE email = ?";
     $stmt = mysqli_prepare($conn, $sql);
-    mysqli_stmt_bind_param($stmt, "s", $username);
+    mysqli_stmt_bind_param($stmt, "s", $email);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
 
@@ -17,16 +17,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row['password'])) {
             $_SESSION['user_id'] = $row['user_id'];
-            $_SESSION['username'] = $row['username'];
+            $_SESSION['email'] = $row['email'];
             $_SESSION['first_name'] = $row['first_name'];
             $_SESSION['last_name'] = $row['last_name'];
+            // Redirect to welcome.php after successful login
             header("Location: welcome.php");
-            exit();
+            exit(); // Ensure script stops executing after redirection header
         } else {
-            $_SESSION['error_message'] = 'Invalid username or password';
+            $_SESSION['error_message'] = 'Invalid email or password';
         }
     } else {
-        $_SESSION['error_message'] = 'Invalid username or password';
+        $_SESSION['error_message'] = 'Invalid email or password';
     }
 }
 ?>
@@ -47,13 +48,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <h2 class="text-center">Login Form</h2>
                     <p class="text-center">Login with your email and password.</p>
                     <?php
-                    if (!empty($errors)) {
+                    if (!empty($_SESSION['error_message'])) {
                         ?>
                         <div class="alert alert-danger text-center">
                             <?php
-                            foreach($errors as $showerror) {
-                                echo $showerror;
-                            }
+                            echo $_SESSION['error_message'];
+                            unset($_SESSION['error_message']);
                             ?>
                         </div>
                         <?php
