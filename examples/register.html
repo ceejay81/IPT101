@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AdminLTE 3 | Registration Page</title>
+
+  <!-- Google Font: Source Sans Pro -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700&display=fallback">
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="../../plugins/fontawesome-free/css/all.min.css">
+  <!-- icheck bootstrap -->
+  <link rel="stylesheet" href="../../plugins/icheck-bootstrap/icheck-bootstrap.min.css">
+  <!-- Theme style -->
+  <link rel="stylesheet" href="../../dist/css/adminlte.min.css">
+</head>
+<body class="hold-transition register-page">
+
+
+<div class="register-box">
+  <div class="register-logo">
+    <a href="../../index2.html"><b>Admin</b>LTE</a>
+  </div>
+
+  <div class="card">
+    <div class="card-body register-card-body">
+      <p class="login-box-msg">Register a new membership</p>
+
+      <form id="registrationForm" action="process_signup.php" method="post">
+
+
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" id="full_name" name="full_name" placeholder="Full name">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-user"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-envelope"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+            </div>
+        </div>
+        <div class="input-group mb-3">
+            <input type="password" class="form-control" name="retype_password" placeholder="Retype password">
+            <div class="input-group-append">
+                <div class="input-group-text">
+                    <span class="fas fa-lock"></span>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+          <div class="col-8">
+              <div class="icheck-primary">
+                  <input type="checkbox" id="agreeTerms" name="terms" value="agree">
+                  <label for="agreeTerms">
+                      I agree to the <a href="#">terms</a>
+                  </label>
+              </div>
+              <div id="errorContainer" class="error-message"></div> <!-- Container for error message -->
+          </div>
+          <!-- /.col -->
+      
+      
+            <div class="col-4">
+                <button type="submit" class="btn btn-primary btn-block">Register</button>
+            </div>
+            <!-- /.col -->
+        </div>
+    </form>
+    
+
+      <div class="social-auth-links text-center">
+        <p>- OR -</p>
+        <a href="#" onclick="fbLogin()" class="btn btn-block btn-primary">
+          <i class="fab fa-facebook mr-2"></i>
+          Sign up using Facebook
+        </a>
+        <p class="mb-2">
+        <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark" data-longtitle="true"></div>
+        <a href="#" onclick="googleLogin()" class="btn btn-block btn-danger">
+          <i class="fab fa-google mr-2"></i>
+          Sign up using Google+
+        </a>
+      </div>
+      <!-- /.social-auth-links -->
+
+      <p class="mb-1">
+      <a href="login.html" class="text-center">I already have a membership</a>
+    </div>
+    <!-- /.form-box -->
+  </div><!-- /.card -->
+</div>
+<!-- /.register-box -->
+
+<!-- jQuery -->
+<script src="../../plugins/jquery/jquery.min.js"></script>
+<!-- Bootstrap 4 -->
+<script src="../../plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- AdminLTE App -->
+<script src="../../dist/js/adminlte.min.js"></script>
+<!-- Facebook SDK script -->
+<script async defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v11.0&appId=389127364085822&autoLogAppEvents=1" nonce="YOUR_NONCE"></script>
+
+<!-- Google Sign-In script -->
+<script src="https://apis.google.com/js/platform.js" async defer></script>
+<script>
+  // Function to send user data to the server
+  function sendUserDataToServer(userData) {
+    $.ajax({
+        url: 'process_signup.php', // Replace with your server-side endpoint URL
+        type: 'POST',
+        data: userData,
+        success: function(response) {
+            console.log('User data sent successfully');
+            // Handle success response from the server
+        },
+        error: function(xhr, status, error) {
+            console.error('Error sending user data to server:', error);
+            // Handle error response from the server
+        }
+    });
+}
+
+
+  // Facebook login function
+  function fbLogin() {
+    FB.login(function(response) {
+        if (response.authResponse) {
+            console.log('Welcome!  Fetching your information.... ');
+            FB.api('/me', function(response) {
+                console.log('Good to see you, ' + response.name + '.');
+                var userData = {
+                    full_name: response.name,
+                    email: response.email
+                };
+                sendUserDataToServer(userData);
+            });
+        } else {
+            console.log('User cancelled login or did not fully authorize.');
+        }
+    }, { scope: 'email' });
+}
+  // Google login function
+  function onSignIn(googleUser) {
+    var profile = googleUser.getBasicProfile();
+    var userData = {
+      full_name: profile.getName(), // Change 'name' to 'full_name' if needed
+      email: profile.getEmail()
+      // You can include more fields if needed
+    };
+    sendUserDataToServer(userData);
+  }
+  // Function to validate the registration form
+  function validateForm() {
+    var fullName = document.getElementById("full_name").value;
+    var email = document.getElementById("email").value;
+    var password = document.getElementById("password").value;
+    var retypePassword = document.getElementsByName("retype_password")[0].value;
+
+    // Perform validation
+    if (fullName === "" || email === "" || password === "" || retypePassword === "") {
+      alert("All fields are required.");
+      return false; // Return false to prevent form submission
+    }
+    if (password !== retypePassword) {
+      alert("Passwords do not match.");
+      return false; // Return false to prevent form submission
+    }
+    return true; // Return true if validation passes
+  }
+// Add event listener to the registration form
+document.getElementById("registrationForm").addEventListener("submit", function(event) {
+    event.preventDefault(); // Prevent default form submission
+    
+    // Collect form data
+    var formData = new FormData(this);
+
+    // Validate form fields
+    var fullName = formData.get("full_name");
+    var email = formData.get("email");
+    var password = formData.get("password");
+
+    if (fullName === "" || email === "" || password === "") {
+        // Display error message within error container
+        document.getElementById("errorContainer").innerText = "All form fields are required.";
+        return; // Stop further execution
+    }
+
+    // Check if the terms checkbox is checked
+    if (!document.getElementById("agreeTerms").checked) {
+        // Display error message within error container
+        document.getElementById("errorContainer").innerText = "You must agree to the terms to register.";
+        return; // Stop further execution
+    }
+
+    // Make AJAX request to process_signup.php
+    var xhr = new XMLHttpRequest();
+    xhr.open("POST", "process_signup.php", true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState === 4) {
+            if (xhr.status === 200) {
+                // Registration successful, redirect to login page
+                window.location.href = "login.html";
+            } else {
+                // Display error message within error container
+                document.getElementById("errorContainer").innerText = xhr.responseText;
+            }
+        }
+    };
+    xhr.send(formData);
+});
+
+
+</script>
+</body>
+</html>
