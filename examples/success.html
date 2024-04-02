@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Profile Updated Successfully</title>
+<style>
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    color: #333;
+    text-align: center;
+}
+
+.profile-info {
+    margin-bottom: 20px;
+}
+
+.profile-info p {
+    margin-bottom: 10px;
+}
+
+.profile-info p span {
+    font-weight: bold;
+    color: #007bff;
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Profile Updated Successfully!</h1>
+
+    <!-- Display updated profile information -->
+    <div class="profile-info">
+        <p>Full Name: <span id="fullName"></span></p>
+        <p>Email: <span id="email"></span></p>
+        <p>Phone Number: <span id="phoneNumber"></span></p>
+        <p>Address: <span id="address"></span></p>
+        <p>Profile Picture: <span id="profilePicture"></span></p>
+        <p>Password: <span id="password"></span></p>
+        <p>Education: <span id="education"></span></p>
+        <p>Location: <span id="location"></span></p>
+        <p>Skills: <span id="skills"></span></p>
+        <p>Notes: <span id="notes"></span></p>
+        <p>Experience: <span id="experience"></span></p>
+        <div class="text-center">
+            <a href="profile.html" class="btn btn-primary">Logout</a>
+    </div>
+</div>
+ 
+   
+<script>
+// Retrieve updated profile information from URL parameters
+var params = new URLSearchParams(window.location.search);
+document.getElementById("fullName").textContent = params.get('full_name');
+document.getElementById("email").textContent = params.get('email');
+document.getElementById("phoneNumber").textContent = params.get('phone_number');
+document.getElementById("address").textContent = params.get('address');
+document.getElementById("profilePicture").textContent = params.get('profile_picture');
+document.getElementById("password").textContent = params.get('password');
+document.getElementById("education").textContent = params.get('education');
+document.getElementById("location").textContent = params.get('location');
+document.getElementById("skills").textContent = params.get('skills');
+document.getElementById("notes").textContent = params.get('notes');
+document.getElementById("experience").textContent = params.get('experience');
+</script>
+
+</body>
+</html>
