@@ -178,7 +178,7 @@
           <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="profile.html" class="d-block">Alexander Pierce</a>
+          <a href="profile.html" class="d-block full-name">asdsadsadas</a>
         </div>
       </div>
 
@@ -856,57 +856,55 @@
       </div><!-- /.container-fluid -->
     </section>
 
-    <!-- Main content -->
-    <section class="content">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-3">
-           <!-- Profile Image -->
-<div class="card card-primary card-outline">
-  <div class="card-body box-profile">
-    <div class="text-center">
-        <img class="profile-user-img img-fluid img-circle" id="profilePicture" src="../../dist/img/user4-128x128.jpg" alt="User profile picture">
-    </div>
-
-    <h3 class="profile-username text-center" id="full_Name"></h3>
-    <ul class="list-group list-group-unbordered mb-3">
-      <li class="list-group-item">
-          <b>Full Name:</b> <span class="float-right" id="full_Name"></span>
-      </li>
-      <li class="list-group-item">
-          <b>Job Title:</b> <span class="float-right" id="jobTitle">Software Engineer</span>
-      </li>
-      <li class="list-group-item">
-          <b>Email:</b> <span class="float-right" id="email"></span>
-      </li>
-      <li class="list-group-item">
-          <b>Phone Number:</b> <span class="float-right" id="phone_number"></span>
-      </li>
-      <!-- Add more profile details as needed -->
-  </ul>
-  
-
-    <ul class="list-group list-group-unbordered mb-3">
-        <li class="list-group-item">
-            <b>Followers</b> <span class="float-right" id="followers">1,322</span>
-        </li>
-        <li class="list-group-item">
-            <b>Following</b> <span class="float-right" id="following">543</span>
-        </li>
-        <li class="list-group-item">
-            <b>Friends</b> <span class="float-right" id="friends">13,287</span>
-        </li>
-    </ul>
-      <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-  </div>
-  <!-- /.card-body -->
-</div>
-
-          
-            <!-- /.card -->
-        
-            <!-- About Me Box -->
-            <div class="card card-primary">
+                <!-- Main content -->
+              <section class="content">
+                <div class="container-fluid">
+                <div class="row">
+                <div class="col-md-3">
+                <!-- Profile Image -->
+                <div class="card card-primary card-outline">
+                <div class="card-body box-profile">
+                <div class="text-center">
+                    <img class="profile-user-img img-fluid img-circle" id="profile_picture" src="update_profile.php" alt="User profile picture">
+                </div>
+                
+                <h3 class="profile-username text-center" id="full_Name"></h3>
+                <ul class="list-group list-group-unbordered mb-3">
+                  </li>
+                  <li class="list-group-item">
+                      <b>Job Title:</b> <span class="float-right" id="jobTitle">Software Engineer</span>
+                  </li>
+                  <li class="list-group-item">
+                      <b>Email:</b> <span class="float-right" id="email"></span>
+                  </li>
+                  <li class="list-group-item">
+                      <b>Phone Number:</b> <span class="float-right" id="phone_number"></span>
+                  </li>
+                  <!-- Add more profile details as needed -->
+                </ul>
+                
+                
+                <ul class="list-group list-group-unbordered mb-3">
+                    <li class="list-group-item">
+                        <b>Followers</b> <span class="float-right" id="followers">1,322</span>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Following</b> <span class="float-right" id="following">543</span>
+                    </li>
+                    <li class="list-group-item">
+                        <b>Friends</b> <span class="float-right" id="friends">13,287</span>
+                    </li>
+                </ul>
+                  <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
+                </div>
+                <!-- /.card-body -->
+                </div>
+                
+                
+                <!-- /.card -->
+                
+                <!-- About Me Box -->
+                <div class="card card-primary">
                 <div class="card-header">
                     <h3 class="card-title">About Me</h3>
                 </div>
@@ -930,8 +928,8 @@
                     <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
                     <p class="text-muted" id="profile_notes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
                 </div>
-            </div>
-        </div>
+                </div>
+                </div>
         
           <!-- /.col -->
           <div class="col-md-9">
@@ -1154,84 +1152,90 @@
                     </div>
                   </div>
                   <!-- /.tab-pane -->
-
                   <div class="tab-pane" id="settings">
-                    <form class="form-horizontal" id="profileForm" action="update_profile.php" method="post">
-                                      <!-- Form fields -->
-                                      <!-- Full Name -->
-                          <div class="form-group row">
-                              <label for="inputFullName" class="col-sm-2 col-form-label">Full Name</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputFullName" name="full_name" placeholder="Full Name">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
-                              <div class="col-sm-10">
-                                  <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
-                              <div class="col-sm-10">
-                                  <input type="tel" class="form-control" id="inputPhoneNumber" name="phone_number" placeholder="Phone Number">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Address">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputProfilePicture" class="col-sm-2 col-form-label">Profile Picture</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputProfilePicture" name="profile_picture" placeholder="Profile Picture URL">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
-                              <div class="col-sm-10">
-                                  <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputEducation" class="col-sm-2 col-form-label">Education</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputEducation" name="education" placeholder="Education">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputLocation" name="location" placeholder="Location">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputSkills" name="skills" placeholder="Skills">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputNotes" class="col-sm-2 col-form-label">Notes</label>
-                              <div class="col-sm-10">
-                                  <textarea class="form-control" id="inputNotes" name="notes" placeholder="Notes"></textarea>
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
-                              <div class="col-sm-10">
-                                  <input type="text" class="form-control" id="inputExperience" name="experience" placeholder="Experience">
-                              </div>
-                          </div>
-                          <div class="form-group row">
-                              <div class="offset-sm-2 col-sm-10">
-                                  <button type="submit" class="btn btn-primary">Update Profile</button>
-                              </div>
-                          </div>
-                      </form>
+                    <form class="form-horizontal" id="profileForm" action="update_profile.php" method="post" enctype="multipart/form-data">
+                      <!-- Form fields -->
+                      <!-- Full Name -->
+                      <div class="form-group row">
+                        <label for="inputFullName" class="col-sm-2 col-form-label">Full Name</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputFullName" name="full_name" placeholder="Full Name">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
+                        <div class="col-sm-10">
+                          <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
+                        <div class="col-sm-10">
+                          <input type="tel" class="form-control" id="inputPhoneNumber" name="phone_number" placeholder="Phone Number">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputAddress" class="col-sm-2 col-form-label">Address</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputAddress" name="address" placeholder="Address">
+                        </div>
+                      </div>
+                      <!-- Profile Picture -->
+                      <div class="form-group row">
+                        <label for="inputProfilePicture" class="col-sm-2 col-form-label">Profile Picture</label>
+                        <div class="col-sm-10">
+                          <input type="file" class="form-control-file" id="inputProfilePicture" name="profile_picture">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
+                        <div class="col-sm-10">
+                          <input type="password" class="form-control" id="inputPassword" name="password" placeholder="Password">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputEducation" class="col-sm-2 col-form-label">Education</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputEducation" name="education" placeholder="Education">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputLocation" class="col-sm-2 col-form-label">Location</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputLocation" name="location" placeholder="Location">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputSkills" class="col-sm-2 col-form-label">Skills</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputSkills" name="skills" placeholder="Skills">
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputNotes" class="col-sm-2 col-form-label">Notes</label>
+                        <div class="col-sm-10">
+                          <textarea class="form-control" id="inputNotes" name="notes" placeholder="Notes"></textarea>
+                        </div>
+                      </div>
+                      <div class="form-group row">
+                        <label for="inputExperience" class="col-sm-2 col-form-label">Experience</label>
+                        <div class="col-sm-10">
+                          <input type="text" class="form-control" id="inputExperience" name="experience" placeholder="Experience">
+                        </div>
+                      </div>
+                  
+                      <!-- Error Message -->
+                      <div id="errorMessage" class="alert alert-danger" style="display: none;"></div>
+                  
+                      <!-- Submit Button -->
+                      <div class="form-group row">
+                        <div class="offset-sm-2 col-sm-10">
+                          <button type="submit" class="btn btn-primary">Update Profile</button>
+                        </div>
+                      </div>
+                    </form>
                   </div>
+                  
                   
                   <!-- /.tab-pane -->
                 </div>
@@ -1277,7 +1281,22 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Include custom JavaScript -->
     <script>
-      // Update profile information elements on the page
+      // Function to update profile picture
+      function updateProfilePicture(url) {
+          $('#profilePicture').attr('src', url);
+      }
+  
+      // Function to show error message
+      function showError(message) {
+          $('#errorMessage').text(message).show();
+      }
+  
+      // Function to hide error message
+      function hideError() {
+          $('#errorMessage').hide();
+      }
+  
+      // Function to update profile information
       function updateProfileInfo(response) {
           $('#full_Name').text(response.full_name);
           $('#email').text(response.email);
@@ -1289,10 +1308,49 @@
           $('#profile_notes').text(response.notes);
       }
   
-      // Handle form submission
+      // Function to store profile information in local storage
+      function storeProfileInfoLocally(response) {
+          localStorage.setItem('profileInfo', JSON.stringify(response));
+      }
+  
+      // Function to retrieve profile information from local storage
+      function retrieveProfileInfoLocally() {
+          var storedProfileInfo = localStorage.getItem('profileInfo');
+          return storedProfileInfo ? JSON.parse(storedProfileInfo) : null;
+      }
+  
+      // Function to update card box profile with locally stored profile information
+      function updateCardBoxProfileFromLocalStorage() {
+          var storedProfileInfo = retrieveProfileInfoLocally();
+          if (storedProfileInfo) {
+              updateProfileInfo(storedProfileInfo);
+          }
+      }
+  
       $(document).ready(function() {
+          // Update card box profile from local storage when the page loads
+          updateCardBoxProfileFromLocalStorage();
+  
+          // Handle form submission
           $('#profileForm').submit(function(e) {
               e.preventDefault(); // Prevent default form submission
+  
+              // Check for empty fields
+              var formData = $(this).serializeArray();
+              var hasEmptyFields = false;
+              formData.forEach(function(item) {
+                  if (item.value.trim() === '') {
+                      hasEmptyFields = true;
+                      return false; // Break out of loop if an empty field is found
+                  }
+              });
+  
+              if (hasEmptyFields) {
+                  showError('Please fill out all the fields before updating.');
+                  return;
+              } else {
+                  hideError();
+              }
   
               // Serialize form data
               var formData = $(this).serialize();
@@ -1304,8 +1362,14 @@
                   data: formData,
                   dataType: 'json', // Expect JSON response
                   success: function(response) {
-                      // Update profile information
+                      // Update profile picture
+                      if (response.profile_picture) {
+                          updateProfilePicture(response.profile_picture);
+                      }
+                      // Update card box profile information
                       updateProfileInfo(response);
+                      // Store updated profile information locally
+                      storeProfileInfoLocally(response);
                       // Optionally, display a success message
                       $('#profileUpdatedMessage').text('Profile updated successfully');
                   },
