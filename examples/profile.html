@@ -172,15 +172,17 @@
 
     <!-- Sidebar -->
     <div class="sidebar">
-      <!-- Sidebar user (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img src="../../dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
-        </div>
-        <div class="info">
-          <a href="profile.html" class="d-block full-name">asdsadsadas</a>
-        </div>
-      </div>
+             <!-- Sidebar user (optional) -->
+<div class="user-panel mt-3 pb-3 mb-3 d-flex">
+  <div class="image">
+    <img src="../../dist/img/user1-128x128.jpg" id="profile_picture" class="img-circle elevation-2" alt="User Image">
+  </div>
+  <div class="info">
+    <a href="profile.html" class="d-block full-name" id="sidebar_full_Name"></a>
+  </div>
+</div>
+
+
 
       <!-- SidebarSearch Form -->
       <div class="form-inline">
@@ -861,55 +863,40 @@
                 <div class="container-fluid">
                 <div class="row">
                 <div class="col-md-3">
-                <!-- Profile Image -->
-                <div class="card card-primary card-outline">
-                <div class="card-body box-profile">
-                <div class="text-center">
-                    <img class="profile-user-img img-fluid img-circle" id="profile_picture" src="update_profile.php" alt="User profile picture">
-                </div>
-                
-                <h3 class="profile-username text-center" id="full_Name"></h3>
-                <ul class="list-group list-group-unbordered mb-3">
-                  </li>
-                  <li class="list-group-item">
-                      <b>Job Title:</b> <span class="float-right" id="jobTitle">Software Engineer</span>
-                  </li>
-                  <li class="list-group-item">
-                      <b>Email:</b> <span class="float-right" id="email"></span>
-                  </li>
-                  <li class="list-group-item">
-                      <b>Phone Number:</b> <span class="float-right" id="phone_number"></span>
-                  </li>
-                  <!-- Add more profile details as needed -->
-                </ul>
-                
-                
-                <ul class="list-group list-group-unbordered mb-3">
-                    <li class="list-group-item">
-                        <b>Followers</b> <span class="float-right" id="followers">1,322</span>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Following</b> <span class="float-right" id="following">543</span>
-                    </li>
-                    <li class="list-group-item">
-                        <b>Friends</b> <span class="float-right" id="friends">13,287</span>
-                    </li>
-                </ul>
-                  <a href="#" class="btn btn-primary btn-block"><b>Follow</b></a>
-                </div>
-                <!-- /.card-body -->
-                </div>
+                                          <!-- Profile Image -->
+                      <div class="card card-primary card-outline">
+                        <div class="card-body box-profile">
+                          <div class="text-center">
+                            <img class="profile-user-img img-fluid img-circle" id="profile_picture2" src="../../dist/img/user1-128x128.jpg" alt="User profile picture">
+                          </div>
+                          <h3 class="profile-username text-center" id="full_Name"></h3>
+                          <ul class="list-group list-group-unbordered mb-3">
+                            <li class="list-group-item">
+                              <b>Job Title:</b> <span class="float-right" id="jobTitle">Software Engineer</span>
+                            </li>
+                            <li class="list-group-item">
+                              <b>Email:</b> <span class="float-right" id="email"></span>
+                            </li>
+                            <li class="list-group-item">
+                              <b>Phone Number:</b> <span class="float-right" id="phone_number"></span>
+                            </li>
+                            <!-- Add more profile details as needed -->
+                          </ul>
+                        </div>
+                        <!-- /.card-body -->
+                      </div>
+
                 
                 
                 <!-- /.card -->
                 
                 <!-- About Me Box -->
                 <div class="card card-primary">
-                <div class="card-header">
+                  <div class="card-header">
                     <h3 class="card-title">About Me</h3>
-                </div>
-                <!-- /.card-header -->
-                <div class="card-body">
+                  </div>
+                  <!-- /.card-header -->
+                  <div class="card-body">
                     <strong><i class="fas fa-book mr-1"></i> Education</strong>
                     <p class="text-muted" id="profile_education">B.S. in Computer Science from the University of Tennessee at Knoxville</p>
                     <hr>
@@ -918,16 +905,16 @@
                     <hr>
                     <strong><i class="fas fa-pencil-alt mr-1"></i> Skills</strong>
                     <p class="text-muted" id="profile_skills">
-                        <span class="tag tag-danger">UI Design</span>
-                        <span class="tag tag-success">Coding</span>
-                        <span class="tag tag-info">Javascript</span>
-                        <span class="tag tag-warning">PHP</span>
-                        <span class="tag tag-primary">Node.js</span>
+                      <span class="tag tag-danger">UI Design</span>
+                      <span class="tag tag-success">Coding</span>
+                      <span class="tag tag-info">Javascript</span>
+                      <span class="tag tag-warning">PHP</span>
+                      <span class="tag tag-primary">Node.js</span>
                     </p>
                     <hr>
                     <strong><i class="far fa-file-alt mr-1"></i> Notes</strong>
                     <p class="text-muted" id="profile_notes">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam fermentum enim neque.</p>
-                </div>
+                  </div>
                 </div>
                 </div>
         
@@ -1165,13 +1152,13 @@
                       <div class="form-group row">
                         <label for="inputEmail" class="col-sm-2 col-form-label">Email</label>
                         <div class="col-sm-10">
-                          <input type="email" class="form-control" id="inputEmail" name="email" placeholder="Email">
+                          <input type="email" class="form-control" id="inputEmail" name="email" placeholder="name@example.com" required>
                         </div>
                       </div>
                       <div class="form-group row">
                         <label for="inputPhoneNumber" class="col-sm-2 col-form-label">Phone Number</label>
                         <div class="col-sm-10">
-                          <input type="tel" class="form-control" id="inputPhoneNumber" name="phone_number" placeholder="Phone Number">
+                          <input type="tel" class="form-control" id="inputPhoneNumber" name="phone_number" placeholder="123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter a valid phone number in the format 123-456-7890" required>
                         </div>
                       </div>
                       <div class="form-group row">
@@ -1181,12 +1168,12 @@
                         </div>
                       </div>
                       <!-- Profile Picture -->
-                      <div class="form-group row">
-                        <label for="inputProfilePicture" class="col-sm-2 col-form-label">Profile Picture</label>
-                        <div class="col-sm-10">
-                          <input type="file" class="form-control-file" id="inputProfilePicture" name="profile_picture">
+                        <div class="form-group row">
+                          <label for="inputProfilePicture" class="col-sm-2 col-form-label">Profile Picture</label>
+                          <div class="col-sm-10">
+                            <input type="file" id="profile_picture_input" accept="image/*">
+                          </div>
                         </div>
-                      </div>
                       <div class="form-group row">
                         <label for="inputPassword" class="col-sm-2 col-form-label">Password</label>
                         <div class="col-sm-10">
@@ -1280,108 +1267,215 @@
     <!-- Include jQuery -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- Include custom JavaScript -->
-    <script>
-      // Function to update profile picture
-      function updateProfilePicture(url) {
-          $('#profilePicture').attr('src', url);
-      }
-  
-      // Function to show error message
-      function showError(message) {
-          $('#errorMessage').text(message).show();
-      }
-  
-      // Function to hide error message
-      function hideError() {
-          $('#errorMessage').hide();
-      }
-  
-      // Function to update profile information
-      function updateProfileInfo(response) {
-          $('#full_Name').text(response.full_name);
-          $('#email').text(response.email);
-          $('#phone_number').text(response.phone_number);
-          $('#jobTitle').text('Software Engineer');
-          $('#profile_education').text(response.education);
-          $('#profile_location').text(response.location);
-          $('#profile_skills').text(response.skills);
-          $('#profile_notes').text(response.notes);
-      }
-  
-      // Function to store profile information in local storage
-      function storeProfileInfoLocally(response) {
-          localStorage.setItem('profileInfo', JSON.stringify(response));
-      }
-  
-      // Function to retrieve profile information from local storage
-      function retrieveProfileInfoLocally() {
-          var storedProfileInfo = localStorage.getItem('profileInfo');
-          return storedProfileInfo ? JSON.parse(storedProfileInfo) : null;
-      }
-  
-      // Function to update card box profile with locally stored profile information
-      function updateCardBoxProfileFromLocalStorage() {
-          var storedProfileInfo = retrieveProfileInfoLocally();
-          if (storedProfileInfo) {
-              updateProfileInfo(storedProfileInfo);
-          }
-      }
-  
-      $(document).ready(function() {
-          // Update card box profile from local storage when the page loads
-          updateCardBoxProfileFromLocalStorage();
-  
-          // Handle form submission
-          $('#profileForm').submit(function(e) {
-              e.preventDefault(); // Prevent default form submission
-  
-              // Check for empty fields
-              var formData = $(this).serializeArray();
-              var hasEmptyFields = false;
-              formData.forEach(function(item) {
-                  if (item.value.trim() === '') {
-                      hasEmptyFields = true;
-                      return false; // Break out of loop if an empty field is found
-                  }
-              });
-  
-              if (hasEmptyFields) {
-                  showError('Please fill out all the fields before updating.');
-                  return;
-              } else {
-                  hideError();
-              }
-  
-              // Serialize form data
-              var formData = $(this).serialize();
-  
-              // Submit form data via AJAX
-              $.ajax({
-                  type: 'POST',
-                  url: 'update_profile.php',
-                  data: formData,
-                  dataType: 'json', // Expect JSON response
-                  success: function(response) {
-                      // Update profile picture
-                      if (response.profile_picture) {
-                          updateProfilePicture(response.profile_picture);
-                      }
-                      // Update card box profile information
-                      updateProfileInfo(response);
-                      // Store updated profile information locally
-                      storeProfileInfoLocally(response);
-                      // Optionally, display a success message
-                      $('#profileUpdatedMessage').text('Profile updated successfully');
-                  },
-                  error: function(xhr, status, error) {
-                      // Handle error
-                      console.error(xhr.responseText);
-                      // Optionally display an error message to the user
-                      alert('An error occurred while updating the profile. Please try again.');
-                  }
-              });
-          });
-      });
+      <script>
+        // Function to update profile picture
+        function updateProfileFromLocalStorage() {
+  var storedProfileInfo = retrieveProfileInfoLocally();
+  if (storedProfileInfo) {
+    // Update profile picture
+    $('#profile_picture').attr('src', storedProfileInfo.profile_picture);
+    // Update full name
+    $('#sidebar_full_Name').text(storedProfileInfo.full_name);
+  }
+}
+
+// Function to update profile information in local storage
+function storeProfileInfoLocally(response) {
+  localStorage.setItem('profileInfo', JSON.stringify(response));
+}
+
+// Function to retrieve profile information from local storage
+function retrieveProfileInfoLocally() {
+  var storedProfileInfo = localStorage.getItem('profileInfo');
+  return storedProfileInfo ? JSON.parse(storedProfileInfo) : null;
+}
+
+$(document).ready(function() {
+  // Update profile from local storage when the page loads
+  updateProfileFromLocalStorage();
+});
+        function updateProfilePicture(url) {
+            // Check if the URL is empty or null
+            if (url) {
+                $('#profile_picture').attr('src', url); // Update the src attribute with the provided URL
+            } else {
+                // If the URL is empty or null, set a default profile picture or display a placeholder image
+                $('#profile_picture').attr('src', '../../dist/img/user1-128x128.jpg'); // Replace 'default_profile_picture.jpg' with the path to your default profile picture
+            }
+        }
+    
+        // Function to show error message
+        function showError(message) {
+            $('#errorMessage').text(message).show();
+        }
+    
+        // Function to hide error message
+        function hideError() {
+            $('#errorMessage').hide();
+        }
+    
+        // Function to update profile information
+        function updateProfileInfo(response) {
+
+            $('#sidebar_full_Name').text(response.full_name);
+            $('#full_Name').text(response.full_name);
+            $('#email').text(response.email);
+            $('#phone_number').text(response.phone_number);
+            $('#jobTitle').text('Software Engineer');
+            $('#profile_education').text(response.education);
+            $('#profile_location').text(response.location);
+            $('#profile_skills').text(response.skills);
+            $('#profile_notes').text(response.notes);
+        }
+    
+        // Function to store profile information in local storage
+        function storeProfileInfoLocally(response) {
+            localStorage.setItem('profileInfo', JSON.stringify(response));
+        }
+    
+        // Function to retrieve profile information from local storage
+        function retrieveProfileInfoLocally() {
+            var storedProfileInfo = localStorage.getItem('profileInfo');
+            return storedProfileInfo ? JSON.parse(storedProfileInfo) : null;
+        }
+    
+        // Function to update card box profile with locally stored profile information
+        function updateCardBoxProfileFromLocalStorage() {
+            var storedProfileInfo = retrieveProfileInfoLocally();
+            if (storedProfileInfo) {
+                updateProfileInfo(storedProfileInfo);
+            }
+        }
+    
+        $(document).ready(function() {
+            // Update card box profile from local storage when the page loads
+            updateCardBoxProfileFromLocalStorage();
+    
+            // Handle form submission
+            $('#profileForm').submit(function(e) {
+                e.preventDefault(); // Prevent default form submission
+    
+                // Check for empty fields
+                var formData = $(this).serializeArray();
+                var hasEmptyFields = false;
+                formData.forEach(function(item) {
+                    if (item.value.trim() === '') {
+                        hasEmptyFields = true;
+                        return false; // Break out of loop if an empty field is found
+                    }
+                });
+    
+                if (hasEmptyFields) {
+                    showError('Please fill out all the fields before updating.');
+                    return;
+                } else {
+                    hideError();
+                }
+    
+                // Serialize form data
+                var formData = $(this).serialize();
+    
+                // Submit form data via AJAX
+                $.ajax({
+                    type: 'POST',
+                    url: 'update_profile.php',
+                    data: formData,
+                    dataType: 'json', // Expect JSON response
+                    success: function(response) {
+                        // Update profile picture
+                        if (response.profile_picture) {
+                            updateProfilePicture(response.profile_picture);
+                            
+                        }
+                        // Update card box profile information
+                        updateProfileInfo(response);
+                        // Store updated profile information locally
+                        storeProfileInfoLocally(response);
+                        // Optionally, display a success message
+                        $('#profileUpdatedMessage').text('Profile updated successfully');
+                    },
+                    error: function(xhr, status, error) {
+                        // Handle error
+                        console.error(xhr.responseText);
+                        // Optionally display an error message to the user
+                        alert('An error occurred while updating the profile. Please try again.');
+                    }
+                });
+            });
+        });
+    
+        // Function to handle file input change event
+        document.getElementById('profile_picture_input').addEventListener('change', function(event) {
+            var file = event.target.files[0]; // Get the selected file
+            var reader = new FileReader();
+    
+            // When file reading is completed
+            reader.onload = function() {
+                var profilePictureUrl = reader.result; // Get the base64 encoded image data
+                document.getElementById('profile_picture').src = profilePictureUrl; // Update the src attribute of the img tag
+    
+                // Update the profile picture via AJAX
+                var formData = new FormData();
+                formData.append('profile_picture', file);
+    
+                $.ajax({
+                    type: 'POST',
+                    url: 'update_profile_picture.php',
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    dataType: 'json',
+                    success: function(response) {
+                        // Optionally handle success response
+                        console.log('Profile picture updated successfully');
+                    },
+                    error: function(xhr, status, error) {
+                        // Optionally handle error response
+                        console.error('An error occurred while updating the profile picture:', error);
+                    }
+                });
+            };
+    
+            // Read the file as Data URL
+            reader.readAsDataURL(file);
+        });
+    </script>
+    <!-- JavaScript code -->
+  <!-- JavaScript code -->
+  <!-- JavaScript code -->
+  <script>
+    // Function to handle file input change event for profile picture 1
+    document.getElementById('profile_picture_input').addEventListener('change', function(event) {
+        var file = event.target.files[0]; // Get the selected file
+        var reader = new FileReader();
+
+        // When file reading is completed
+        reader.onload = function() {
+            var profilePictureUrl = reader.result; // Get the base64 encoded image data
+            document.getElementById('profile_picture').src = profilePictureUrl; // Update the src attribute of the img tag
+        };
+
+        // Read the file as Data URL
+        reader.readAsDataURL(file);
+    });
+
+    // Function to handle file input change event for profile picture 2
+    document.getElementById('profile_picture_input2').addEventListener('change', function(event) {
+        var file = event.target.files[0]; // Get the selected file
+        var reader = new FileReader();
+
+        // When file reading is completed
+        reader.onload = function() {
+            var profilePictureUrl = reader.result; // Get the base64 encoded image data
+            document.getElementById('profile_picture2').src = profilePictureUrl; // Update the src attribute of the img tag
+        };
+
+        // Read the file as Data URL
+        reader.readAsDataURL(file);
+    });
   </script>
+
+
+
 </body>
 </html>
