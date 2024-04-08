@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Single Page Application</title>
+<style>
+    body, html {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+
+    .container {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .page {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        transition: left 0.5s ease;
+    }
+
+    .page.active {
+        display: block;
+        left: 0;
+    }
+
+    #home { background-color: #f0f0f0; }
+    #profile { background-color: #e0e0e0; }
+    #assessments { background-color: #d0d0d0; }
+    #evaluations { background-color: #c0c0c0; }
+
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: #333;
+        color: #fff;
+        text-align: center;
+        padding: 10px 0;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        padding: 10px;
+    }
+
+    nav a:hover {
+        background-color: #555;
+    }
+</style>
+</head>
+<body>
+<nav>
+    <a href="#" onclick="showPage('home')">Home</a>
+    <a href="#" onclick="showPage('profile')">Profile</a>
+    <a href="#" onclick="showPage('assessments')">Assessments</a>
+    <a href="#" onclick="showPage('evaluations')">Evaluations</a>
+</nav>
+
+<div class="container">
+    <div id="home" class="page active">
+        <h2>Home</h2>
+        <p>Welcome to the home page!</p>
+    </div>
+
+    <div id="profile" class="page">
+        <h2>Profile</h2>
+        <!-- Add your profile form here -->
+        <p>This is where you can update your profile information.</p>
+    </div>
+
+    <div id="assessments" class="page">
+        <h2>Assessments</h2>
+        <!-- Add your assessments content here -->
+        <p>This is where you can take assessments.</p>
+    </div>
+
+    <div id="evaluations" class="page">
+        <h2>Evaluations</h2>
+        <!-- Add your evaluations content here -->
+        <p>This is where you can view your assessment results.</p>
+    </div>
+</div>
+
+<script>
+    function showPage(pageId) {
+        var pages = document.querySelectorAll('.page');
+        pages.forEach(function(page) {
+            if (page.id === pageId) {
+                page.classList.add('active');
+            } else {
+                page.classList.remove('active');
+            }
+        });
+    }
+</script>
+</body>
+</html>
