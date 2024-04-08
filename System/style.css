@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+html,body{
+    background: #6665ee;
+    font-family: 'Poppins', sans-serif;
+}
+
+::selection{
+    color: #fff;
+    background: #6665ee;
+}
+
+.container{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.form{
+    background: #fff;
+    padding: 30px 35px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.form form .form-control{
+    height: 40px;
+    font-size: 15px;
+}
+
+.form form .forget-pass{
+    margin: -15px 0 15px 0;
+}
+
+.form form .forget-pass a{
+    font-size: 15px;
+}
+
+.form form .button{
+    background: #6665ee;
+    color: #fff;
+    font-size: 17px;
+    font-weight: 500; /* Ensure that the chosen font supports this weight */
+    transition: background 0.3s ease;
+    border: none;
+    cursor: pointer;
+    border-radius: 3px;
+    padding: 10px 20px;
+}
+
+.form form .button:hover{
+    background: #5757d1;
+}
+
+.form form .link{
+    padding: 5px 0;
+}
+
+.form form .link a{
+    color: #6665ee;
+}
+
+.form p{
+    font-size: 14px;
+}
+
+.alert{
+    font-size: 14px;
+}
+
+.slide {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s ease-in-out;
+}
+
+.slide-left {
+    transform: translateX(-100%);
+}
+
+.slide-right {
+    transform: translateX(100%);
+}
+.blur {
+    filter: blur(5px); /* Adjust the blur strength as needed */
+}
