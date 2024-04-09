@@ -86,3 +86,11 @@ html,body{
 .blur {
     filter: blur(5px); /* Adjust the blur strength as needed */
 }
+
+/* Welcome message style */
+.welcome-message {
+    font-size: 16px;
+    color: #a39c37;
+    font-weight: bold;
+    margin-bottom: 202px; /* Add margin bottom for spacing */
+}

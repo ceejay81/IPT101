@@ -16,12 +16,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     if (mysqli_num_rows($result) == 1) {
         $row = mysqli_fetch_assoc($result);
         if (password_verify($password, $row['password'])) {
-            $_SESSION['user_id'] = $row['user_id'];
+            $_SESSION['id'] = $row['id'];
             $_SESSION['email'] = $row['email'];
             $_SESSION['first_name'] = $row['first_name'];
             $_SESSION['last_name'] = $row['last_name'];
             // Redirect to welcome.php after successful login
-            header("Location: welcome.php");
+            header("Location: dashboard.php");
             exit(); // Ensure script stops executing after redirection header
         } else {
             $_SESSION['error_message'] = 'Invalid email or password';
