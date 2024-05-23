@@ -1,5 +1,7 @@
 <?php 
-session_start();
+if(session_status() !== PHP_SESSION_ACTIVE) {
+    session_start();
+}
 include "db_connect.php";
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -79,8 +81,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
     mysqli_close($conn);
 }
-?>
-?>
+?>  
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -95,7 +96,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             <div class="col-md-4 offset-md-4 form">
                 <form action="register.php" method="POST" autocomplete="off">
                     <h2 class="text-center">Signup Form</h2>
-                    <p class="text-center">It's quick and easy.</p>
                     <?php
                     if (!empty($errors)) {
                         // Display validation errors
